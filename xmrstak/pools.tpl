@@ -40,6 +40,8 @@ POOLCONF],
  *    # 256KiB scratchpad memory
  *    cryptonight_armor
  *    cryptonight_turtle
+ *    # 512KiB scratchpad memory
+ *    cryptonight_armor
  *    # 1MiB scratchpad memory
  *    cryptonight_lite
  *    cryptonight_lite_v7

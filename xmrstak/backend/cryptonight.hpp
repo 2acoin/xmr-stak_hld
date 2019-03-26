@@ -32,7 +32,8 @@ enum xmrstak_algo_id
 	cryptonight_armor = start_derived_algo_id,
 	cryptonight_v8_half = (start_derived_algo_id + 1),
 	cryptonight_v8_zelerius = (start_derived_algo_id + 2),
-	cryptonight_v8_double = (start_derived_algo_id + 3)
+	cryptonight_v8_double = (start_derived_algo_id + 3),
+	cryptonight_armor = (start_derived_algo_id + 4)
 	// please add the algorithm name to get_algo_name()
 };
 
@@ -70,7 +71,8 @@ inline std::string get_algo_name(xmrstak_algo_id algo_id)
 		"cryptonight_turtle",
 		"cryptonight_v8_half", // used by masari and stellite
 		"cryptonight_v8_zelerius",
-		"cryptonight_v8_double"
+		"cryptonight_v8_double",
+		"cryptonight_armor"
 	}};
 
 
@@ -181,6 +183,9 @@ constexpr uint32_t CN_GPU_ITER = 0xC000;
 // cryptonight turtle (the mask is not using the full 256kib scratchpad)
 constexpr uint32_t CN_TURTLE_MASK = 0x1FFF0;
 
+// cryptonight armor (the mask is not using the full 512kib scratchpad)
+constexpr uint32_t CN_ARMOR_MASK = 0x3FFE0;
+
 constexpr uint32_t CN_ZELERIUS_ITER = 0x60000;
 
 constexpr uint32_t CN_WALTZ_ITER = 0x60000;
@@ -216,7 +221,8 @@ inline xmrstak_algo POW(xmrstak_algo_id algo_id)
 		{cryptonight_turtle, cryptonight_monero_v8, CN_ITER/8, CN_MEMORY/8, CN_TURTLE_MASK},
 		{cryptonight_v8_half, cryptonight_monero_v8, CN_ITER/2, CN_MEMORY},
 		{cryptonight_v8_zelerius, cryptonight_monero_v8, CN_ZELERIUS_ITER, CN_MEMORY},
-		{cryptonight_v8_double, cryptonight_monero_v8, CN_DOUBLE_ITER, CN_MEMORY}
+		{cryptonight_v8_double, cryptonight_monero_v8, CN_DOUBLE_ITER, CN_MEMORY},
+		{cryptonight_armor, cryptonight_monero_v8, CN_ITER/4, CN_MEMORY/4, CN_ARMOR_MASK},
 		// {cryptonight_derived}
 	}};
 
