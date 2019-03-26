@@ -60,8 +60,9 @@ Monero. See [here](https://github.com/fireice-uk/cryptonote-speedup-demo/) for d
 
 If your prefered coin is not listed, you can choose one of the following algorithms:
 - 256Kib scratchpad memory
-    - cryptonight_armor
     - cryptonight_turtle
+- 512Kib scratchpad memory
+    - cryptonight_armor
 - 1MiB scratchpad memory
     - cryptonight_lite
     - cryptonight_lite_v7
